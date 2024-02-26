@@ -14,9 +14,9 @@ jQuery(function ($) {
         title: "Deposito realizado exitosamente",
         timer: 1500,
         showConfirmButton: false,
-      }).then(() => {
-        window.location.href = "/view/menu/menu.html";
       });
+      console.log("funciona a medias");
+      window.location.href = "http://127.0.0.1/view/menu/menu.html";
     } else {
       alert("Ingrese monto válido");
     }
