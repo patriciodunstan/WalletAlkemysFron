@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Wallet - Enviar Dinero</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Enviar Dinero</h2>
+    <form id="sendForm">
+      <div class="form-group">
+        <label for="searchContact">Buscar en la agenda de transferencia</label>
+        <input type="text" class="form-control" id="searchContact" placeholder="Search Contact" />
+      </div>
+      <button type="submit" class="btn btn-primary">
+        Agregar nuevo contacto
+      </button>
+      <h3>Contactos</h3>
+      <ul>
+        <li class="list-group-item">
+          <div class="contact-item">
+            <span class="contact-name">Homero Simpson</span>
+            <span class="contact-details">RUT: 123456789-0, Alias: BestDad, Banco: SpringfildBank
+            </span>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="contact-item">
+            <span class="contact-name">Moe Sizlak</span>
+            <span class="contact-details">RUT: 134525321-1, Alias: Moe, Banco: SpringfildBank
+            </span>
+          </div>
+        </li>
+      </ul>
+      <div class="form-group">
+        <label for="sendAmount">Monto a transferir</label>
+        <input type="number" class="form-control" id="sendAmount" placeholder="Enter amount" required />
+      </div>
+      <button type="submit" class="btn btn-primary" id="sendMoneyBtn">
+        Enviar Dinero
+      </button>
+    </form>
+    <a href="../menu/menu.html" class="btn btn-secondary">Volver al Menú Principal</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,22 +1,27 @@
-jQuery(function ($) {
+const { event } = require("jquery");
+
+$(function ($) {
+  $("#depositForn").on("submit", function (event) {
+    event.prenventDefault();
+  });
+
   $("#depositDepositBtn").on("click", function () {
+    depositAmount = parseFloat($("#depositAmount").val());
     depositIn();
   });
 
   function depositIn() {
-    let depositAmount = parseFloat($("#depositAmount").val());
     if (!isNaN(depositAmount)) {
       let actualBalance = parseFloat(localStorage.getItem("balance")) || 0;
       let newBalance = actualBalance + depositAmount;
-      localStorage.setItem("balance", newBalance.toFixed(2));
+      localStorage.setItem("balance", newBalance);
       Swal.fire({
         icon: "success",
         title: "Deposito realizado exitosamente",
         timer: 1500,
         showConfirmButton: false,
       });
-      console.log("funciona a medias");
-      window.location.href = "http://127.0.0.1/view/menu/menu.html";
+      window.location.href = "http://127.0.0.1:5500/view/menu/menu.html";
     } else {
       alert("Ingrese monto válido");
     }

@@ -5,6 +5,6 @@ $(document).ready(function () {
   function mostrarBalance() {
     let balanceActual = parseFloat(localStorage.getItem("balance")) || 0;
     balance = balanceActual;
-    $("#balance").text(balanceActual.toFixed(2));
+    $("#balance").text(balanceActual);
   }
 });
