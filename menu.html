@@ -1,48 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link
-      rel="stylesheet"
-      href="style.css"
-    />
-    <title>Wallet - Menu Principal</title>
-  </head>
-  <body>
-    <div>
-      <h2>Menú Principal</h2>
-      <div>
-        <label for="balance">Dinero en Cuenta</label>
-        <p id="balance">$0</p>
-      </div>
-      <a
-        href="../deposit/deposit.html"
-        class="btn btn-primary"
-        >Depositar</a
-      >
-      <a
-        href="../sendmoney/sendmoney.html"
-        class="btn btn-primary"
-        >Enviar Dinero</a
-      >
-      <a
-        href="../transactions/transactions.html"
-        class="btn btn-primary"
-        >Último Movimientos></a
-      >
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/menu.css" />
+  <title>Wallet - Menu Principal</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Menú Principal</h1>
+    <div class="saldo">
+      <label for="balance">Dinero en Cuenta</label>
+      <p id="balance">$0</p>
+    </div>
+    <div class="acciones">
+      <button id="deposito" class="btn btn-primary">Depositar</button>
+      <button id="transferencia" class="btn btn-primary">Enviar Dinero</button>
+      <button id="transacciones" class="btn btn-primary">Último Movimientos</butto>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="./js/menu.js"></script>
+</body>
+
 </html>

@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./css/login.css" />
   <title>Wallet - login</title>
 </head>
 
 <body>
   <div class="container">
-    <h2>Login</h2>
+    <h1>Login</h1>
     <form id="loginForm">
       <div class="form-group">
         <label for="email">Email</label>
@@ -21,15 +21,17 @@
       <div class="form-group">
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" placeholder="Enter password" />
+        <button type="submit" class="btn btn-primary">
+          Login
+        </button>
       </div>
-      <button type="submit" class="btn btn-primary">
-        Login
-      </button>
     </form>
-    <a href="/view/menu/menu.html" class="btn btn-secondary">Ir al Menú Principal</a>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script.js"></script>
+    <p class="error-message"></p>
+    <div class="register">
+      <p>No posee cuenta? <a href="./register.html">Registrate</a></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/register.js"></script>
 </body>
 
 </html>

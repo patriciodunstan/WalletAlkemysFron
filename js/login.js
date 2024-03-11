@@ -5,9 +5,13 @@ jQuery(function () {
     let password = $("#password").val();
 
     if (email === "admin@admin" && password === "admin") {
-      window.location.href = "/view/menu/menu.html";
+      window.location.href = "menu.html";
     } else {
-      alert("Credenciales Incorrectas");
+      $(".error-message").html(`
+      <div class="alert alert-danger" role="alert">
+        Credenciales incorrectas. Por favor, inténtelo de nuevo.
+      </div>
+    `);
     }
   });
 });

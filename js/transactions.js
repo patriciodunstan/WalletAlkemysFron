@@ -1,24 +1,93 @@
-jQuery(function ($) {
-    $("#").on("click", function () {
-      depositIn();
-    });
-  
-    function depositIn() {
-      let depositAmount = parseFloat($("#depositAmount").val());
-      if (!isNaN(depositAmount)) {
-        let actualBalance = parseFloat(localStorage.getItem("balance")) || 0;
-        let newBalance = actualBalance + depositAmount;
-        localStorage.setItem("balance", newBalance.toFixed(2));
-        Swal.fire({
-          icon: "success",
-          title: "Deposito realizado exitosamente",
-          timer: 1500,
-          showConfirmButton: false,
-        }).then(() => {
-          window.location.href = "/view/menu/menu.html";
-        });
-      } else {
-        alert("Ingrese monto válido");
-      }
-    }
+$(document).ready(function () {
+  const transactions = [
+    {
+      fecha: "2024-01-01",
+      tipo: "deposito",
+      monto: "1000",
+    },
+    {
+      fecha: "2024-01-02",
+      tipo: "retiro",
+      monto: "10500",
+    },
+    {
+      fecha: "2024-01-03",
+      tipo: "deposito",
+      monto: "1000000",
+    },
+    {
+      fecha: "2024-01-04",
+      tipo: "retiro",
+      monto: "2000",
+    },
+    {
+      fecha: "2024-01-05",
+      tipo: "deposito",
+      monto: "100",
+    },
+    {
+      fecha: "2024-01-06",
+      tipo: "retiro",
+      monto: "3000",
+    },
+    {
+      fecha: "2024-01-07",
+      tipo: "deposito",
+      monto: "2000",
+    },
+    {
+      fecha: "2024-01-08",
+      tipo: "retiro",
+      monto: "1000",
+    },
+  ];
+
+  mostrarTransacciones(transactions);
+
+  $("#form-filter").submit(function (event) {
+    event.preventDefault();
+
+    const tipo = $("#tipo").val();
+    const fechaInicio = $("#fecha-inicio").val();
+    const fechaFin = $("#fecha-fin").val();
+
+    const transaccionesFiltradas = filtrarTransacciones(
+      tipo,
+      fechaInicio,
+      fechaFin
+    );
+    mostrarTransacciones(transaccionesFiltradas);
   });
+
+  function filtrarTransacciones(tipo, fechaInicio, fechaFin) {
+    return transactions.filter((transaccion) => {
+      if (tipo && transaccion.tipo !== tipo) {
+        return false;
+      }
+
+      if (fechaInicio && transaccion.fecha < fechaInicio) {
+        return false;
+      }
+
+      if (fechaFin && transaccion.fecha > fechaFin) {
+        return false;
+      }
+
+      return true;
+    });
+  }
+
+  function mostrarTransacciones(transacciones) {
+    $("#transactions-table tbody").empty();
+
+    transacciones.forEach((transaccion) => {
+      $("#transactions-table tbody").append(`
+      <tr>
+      <td>${transaccion.fecha}</td>
+      <td>${transaccion.tipo}</td>
+      <td>${transaccion.monto}</td>
+      </tr>
+      `);
+    });
+  }
+});

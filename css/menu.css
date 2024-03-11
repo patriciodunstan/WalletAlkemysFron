@@ -1,0 +1,47 @@
+body {
+  font-family: poppins;
+  margin: 20px;
+  background-color: #b3cdf5;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px #4b4d50;
+  background-color: #fff;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+  font-weight: 500;
+  font-size: 48px;
+}
+
+.saldo {
+  margin-bottom: 20px;
+}
+
+.saldo label {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.saldo p {
+  float: right;
+}
+
+.acciones {
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px;
+}

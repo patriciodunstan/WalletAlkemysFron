@@ -1,29 +1,24 @@
-const { event } = require("jquery");
+$(document).ready(function () {
+  $("#depositForm").on("submit", function (event) {
+    event.preventDefault();
 
-$(function ($) {
-  $("#depositForn").on("submit", function (event) {
-    event.prenventDefault();
-  });
+    let depositAmount = $("#depositAmount").val();
 
-  $("#depositDepositBtn").on("click", function () {
-    depositAmount = parseFloat($("#depositAmount").val());
-    depositIn();
-  });
-
-  function depositIn() {
+    // Remove the unused function declaration
+    // function depositIn() {
     if (!isNaN(depositAmount)) {
       let actualBalance = parseFloat(localStorage.getItem("balance")) || 0;
       let newBalance = actualBalance + depositAmount;
       localStorage.setItem("balance", newBalance);
-      Swal.fire({
-        icon: "success",
-        title: "Deposito realizado exitosamente",
-        timer: 1500,
-        showConfirmButton: false,
-      });
-      window.location.href = "http://127.0.0.1:5500/view/menu/menu.html";
-    } else {
-      alert("Ingrese monto válido");
+      console.log(newBalance, actualBalance, depositAmount);
+      if (newBalance > 0) {
+        $(".error-message").text("Depósito realizado exitosamente");
+        setTimeout(function () {
+          window.location.href = "menu.html";
+        }, 2000);
+      } else {
+        $(".error-message").text("Saldo insuficiente");
+      }
     }
-  }
+  });
 });

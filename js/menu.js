@@ -7,4 +7,16 @@ $(document).ready(function () {
     balance = balanceActual;
     $("#balance").text(balanceActual);
   }
+
+  $("#deposito").click(function () {
+    window.location.href = "deposit.html";
+  });
+
+  $("#transferencia").click(function () {
+    window.location.href = "sendmoney.html";
+  });
+
+  $("#transacciones").click(function () {
+    window.location.href = "transactions.html";
+  });
 });
